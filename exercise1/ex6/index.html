@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng Sách ABC</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== Header ===== -->
+    <header>
+        <h1>Cửa hàng Sách ABC</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main>
+        <!-- Thêm khu vực tìm kiếm -->
+        <section id="search-section">
+            <h2>Tìm kiếm sản phẩm</h2>
+            <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm...">
+            <button id="searchBtn">Tìm</button>
+            <div id="filters">
+                <select id="priceFilter" aria-label="Lọc theo giá">
+                    <option value="all">Tất cả giá</option>
+                    <option value="lt100">Dưới 100.000₫</option>
+                    <option value="100-200">100.000₫ - 200.000₫</option>
+                    <option value=">200">Trên 200.000₫</option>
+                </select>
+                <select id="sortSelect" aria-label="Sắp xếp">
+                    <option value="none">Không sắp xếp</option>
+                    <option value="name-asc">Tên (A → Z)</option>
+                    <option value="price-asc">Giá tăng dần</option>
+                    <option value="price-desc">Giá giảm dần</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Nút hiển thị form thêm sản phẩm -->
+        <section id="add-section">
+            <button id="addProductBtn">Thêm sản phẩm mới</button>
+        </section>
+
+        <!-- Giới thiệu -->
+        <section>
+            <h2>Chào mừng đến với cửa hàng Sách ABC!</h2>
+            <p>
+                Nơi bạn có thể tìm thấy những cuốn sách hay, truyền cảm hứng và giúp phát triển bản thân mỗi ngày.
+            </p>
+        </section>
+
+        <!-- Danh sách sản phẩm -->
+        <section id="product-list">
+            <h2>Sản phẩm nổi bật</h2>
+
+            <article class="product-item">
+                <h3 class="product-name">Sách “Dám bị ghét”</h3>
+                <p class="product-desc">
+                    Cuốn sách giúp bạn thấu hiểu bản thân và sống đúng với giá trị của mình.
+                </p>
+                <p class="product-price">Giá: 120.000₫</p>
+                <img src="https://static.oreka.vn/800-800_218ae509-ada5-4fbb-afb2-00e5b952e091" alt="Sách Dám bị ghét">
+            </article>
+
+            <article class="product-item">
+                <h3 class="product-name">Sách “Think and Grow Rich”</h3>
+                <p class="product-desc">
+                    Bí quyết tư duy thành công được chia sẻ qua những câu chuyện kinh điển.
+                </p>
+                <p class="product-price">Giá: 150.000₫</p>
+                <img src="https://static.oreka.vn/800-800_18e76d87-f9ac-4676-b6d3-07c3415c014f.webp"
+                    alt="Sách Think and Grow Rich">
+            </article>
+
+            <article class="product-item">
+                <h3 class="product-name">Sách “7 Thói quen hiệu quả”</h3>
+                <p class="product-desc">
+                    Cẩm nang phát triển cá nhân và lãnh đạo bản thân trong cuộc sống.
+                </p>
+                <p class="product-price">Giá: 180.000₫</p>
+                <img src="https://sachtrading.com/wp-content/uploads/2023/07/7-thoi-quen-thanh-dat.jpg"
+                    alt="Sách 7 Thói quen hiệu quả">
+            </article>
+        </section>
+
+        <!-- Form liên hệ -->
+        <section>
+            <h2>Liên hệ với chúng tôi</h2>
+            <form id="contactForm">
+                <label for="name">Họ và tên:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Nội dung:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <button type="submit">Gửi</button>
+            </form>
+        </section>
+
+        <!-- Form thêm sản phẩm (ẩn mặc định) -->
+        <form id="addProductForm" class="hidden">
+            <h3>Thêm sản phẩm mới</h3>
+            <label for="newName">Tên sản phẩm:</label>
+            <input type="text" id="newName" required>
+
+            <label for="newPrice">Giá:</label>
+            <input type="number" id="newPrice" required>
+
+            <label for="newDesc">Mô tả:</label>
+            <textarea id="newDesc" rows="3"></textarea>
+
+            <label for="newImage">URL ảnh sản phẩm:</label>
+            <input type="text" id="newImage" placeholder="https://...">
+
+            <button type="submit">Thêm</button>
+            <button type="button" id="cancelBtn">Hủy</button>
+            <p id="errorMsg" style="color:red;"></p>
+        </form>
+
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>© 2025 Cửa hàng Sách ABC | Địa chỉ: 123 Đường Sách, Hà Nội</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
