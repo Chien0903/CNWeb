@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import SearchForm from "./assets/components/searchForm";
-import ResultTable from "./assets/components/resultTable";
-import AddUser from "./assets/components/AddUser";
+import SearchForm from "./components/searchForm";
+import ResultTable from "./components/resultTable";
+import AddUser from "./components/AddUser";
 
 function App() {
   const [kw, setKeyword] = React.useState("");
